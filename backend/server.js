@@ -4,6 +4,8 @@ import morgan from 'morgan';
 import cors from 'cors';
 import dotenv from 'dotenv';
 
+import productRoutes from './routes/productRoutes.js';
+
 dotenv.config();
 
 const app = express();
@@ -16,9 +18,7 @@ app.use(helmet()); //helmet is a security middleware that protects the app by se
 
 app.use(morgan('dev')); //morgan logs requests
 
-app.get('/', (req, res) => {
-    res.send('Hello from backend');
-});
+app.get('/api/products', productRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
