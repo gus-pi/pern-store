@@ -67,7 +67,7 @@ export const updateProduct = async (req, res) => {
             });
         }
 
-        res.status(200).json({ success: true, data: updateProduct[0] });
+        res.status(200).json({ success: true, data: updatedProduct[0] });
     } catch (error) {
         console.log('Error in updateProduct function', error);
         res.status(500).json({ success: false, message: 'Internal server error' });
